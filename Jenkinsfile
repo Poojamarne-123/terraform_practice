@@ -1,0 +1,26 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('git checkout') {
+            steps {
+                git 'https://github.com/Poojamarne-123/terraform_practice.git'
+            }
+        }
+        stage('terraform init') {
+            steps {
+                sh 'terraform init'
+            }
+        }
+        stage('terraform plan') {
+            steps {
+                sh 'terraform plan'
+            }
+        }
+        stage('terraform apply') {
+            steps {
+                sh 'terraform apply'
+            }
+        }
+    }
+}
